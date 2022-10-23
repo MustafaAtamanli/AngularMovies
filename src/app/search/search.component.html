@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="form-group input-group-lg">
+            <input class="form-control" placeholder="keyword" formControlName="keyword">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-danger btn-block btn-lg">Search</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="response.results">
+    <ul *ngFor="let item of response.results">
+        <li>{{item.original_title}} </li> - <button  routerLink="/movie-detail/{{item.id}}" type="button" class="btn btn-primary">Detaylar</button>
+    </ul>
+</div>
