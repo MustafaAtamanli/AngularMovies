@@ -1,0 +1,7 @@
+<p>popular-movies works!</p>
+
+<div>
+    <ul *ngFor="let item of response.results">
+        <li>{{item.original_title}} </li> - <button  routerLink="/movie-detail/{{item.id}}" type="button" class="btn btn-primary">Detaylar</button>
+    </ul>
+</div>
